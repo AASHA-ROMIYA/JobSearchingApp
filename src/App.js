@@ -1,24 +1,27 @@
-import logo from './logo.svg';
 import './App.css';
+import "@fortawesome/fontawesome-free/css/all.min.css";
+import { Admin } from './pages/Admin';
+import { ThemeProvider } from './pages/ThemeContext';
+import { Routes,Route } from 'react-router-dom';
+import { HomePage } from './pages/HomePage';
+import { Start } from './pages/Start';
+import { EditJob } from './pages/EditJob';
+import { AddJob } from './pages/AddJob';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider>
+      <div className={`App `}>
+        <Routes>
+          <Route path="/" element={<Start/>}/>
+          <Route path="/admin" element={<Admin />}/>
+          <Route path ="/Home" element={<HomePage/>}/>
+          <Route path="/update/:id" element={<EditJob/>}/>
+          <Route path ="/add" element={<AddJob/>}/>
+        </Routes>
+        
+      </div>
+    </ThemeProvider>
   );
 }
 

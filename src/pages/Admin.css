@@ -1,0 +1,20 @@
+.job-container{
+    flex-direction: row;
+    justify-content: space-between;
+}
+.action{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap:10px
+}
+.action i{
+    cursor: pointer;
+}
+.fa-plus{
+    /* background-color: green; */
+    color: green;
+    font-size: 20px;
+    cursor: pointer;
+    text-align: center;
+}
